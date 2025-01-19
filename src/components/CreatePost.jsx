@@ -26,6 +26,7 @@ export function CreatePost() {
                 name="post-content"
                 id="post-content"
                 rows={8}
+                placeholder="How are you doing today? 🌻"
               ></textarea>
             </div>
           </div>

@@ -2,10 +2,14 @@ import "../styles/PostsSection.css";
 import "../components/Post.jsx";
 import { Post } from "../components/Post.jsx";
 
-export function PostsSection() {
+export function PostsSection(props) {
+  const { entries } = props;
+
   return (
-    <div className="posts-section">
-      <Post />
-    </div>
+    <>
+      {entries.map((entry, entryIndex) => {
+        return <Post key={entryIndex} entry={entry} />;
+      })}
+    </>
   );
 }
