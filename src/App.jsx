@@ -30,6 +30,24 @@ function App() {
     setEntries(newEntries);
   }
 
+  function handleCreateEntry(
+    user_title,
+    user_content,
+    user_date,
+    user_feeling
+  ) {
+    let newEntries = [
+      ...entries,
+      {
+        title: user_title,
+        content: user_content,
+        date: user_date,
+        feeling: user_feeling,
+        posted: false,
+      },
+    ];
+  }
+
   function handleArchiveEntry(index) {
     let newEntries = [...entries];
     newEntries[index].posted = false;
@@ -46,7 +64,7 @@ function App() {
       <Header />
       <FilterTabs />
       <PostsSection entries={entries} handlePostEntry={handlePostEntry} />
-      <CreatePost />
+      <CreatePost handleCreateEntry={handleCreateEntry} />
     </>
   );
 }

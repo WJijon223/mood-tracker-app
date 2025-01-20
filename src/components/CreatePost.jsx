@@ -1,6 +1,7 @@
 import "../styles/CreatePost.css";
 
-export function CreatePost() {
+export function CreatePost(props) {
+  const { handleCreateEntry } = props;
   return (
     <>
       <div className="create-post">
