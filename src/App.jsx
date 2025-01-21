@@ -46,6 +46,7 @@ function App() {
         posted: false,
       },
     ];
+    setEntries(newEntries);
   }
 
   function handleArchiveEntry(index) {
@@ -67,6 +68,7 @@ function App() {
       <CreatePost
         handleCreateEntry={handleCreateEntry}
         handleArchiveEntry={handleArchiveEntry}
+        entries={entries}
       />
     </>
   );
