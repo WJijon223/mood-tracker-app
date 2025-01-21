@@ -64,7 +64,10 @@ function App() {
       <Header />
       <FilterTabs />
       <PostsSection entries={entries} handlePostEntry={handlePostEntry} />
-      <CreatePost handleCreateEntry={handleCreateEntry} />
+      <CreatePost
+        handleCreateEntry={handleCreateEntry}
+        handleArchiveEntry={handleArchiveEntry}
+      />
     </>
   );
 }
