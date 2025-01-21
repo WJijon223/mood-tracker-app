@@ -11,6 +11,13 @@ export function CreatePost(props) {
   const [feeling_input, setFeelingInput] = useState("");
   const [content_input, setContentInput] = useState("");
 
+  function clearInputs() {
+    setTitleInput("");
+    setContentInput("");
+    setDateInput("");
+    setFeelingInput("");
+  }
+
   return (
     <>
       <div className="create-post">
@@ -78,13 +85,13 @@ export function CreatePost(props) {
                 date_input,
                 feeling_input
               );
-              console.log(entries);
+              clearInputs();
             }}
           >
             Post
           </button>
           <button>Archive</button>
-          <button>Delete</button>
+          <button onClick={() => clearInputs()}>Delete</button>
         </div>
       </div>
     </>
