@@ -23,6 +23,8 @@ function App() {
     },
   ]);
 
+  const [selectedTab, setSelectedTab] = useState(`Posts`);
+
   //Handling entries
   function handlePostEntry(index) {
     let newEntries = [...entries];
@@ -63,7 +65,7 @@ function App() {
   return (
     <>
       <Header />
-      <FilterTabs />
+      <FilterTabs setSelectedTab={setSelectedTab} />
       <PostsSection entries={entries} handlePostEntry={handlePostEntry} />
       <CreatePost
         handleCreateEntry={handleCreateEntry}

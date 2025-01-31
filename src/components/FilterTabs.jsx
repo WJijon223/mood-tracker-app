@@ -1,10 +1,24 @@
 import "../styles/FilterTabs.css";
 
-export function FilterTabs() {
+export function FilterTabs(props) {
+  const { setSelectedTab } = props;
+  const tabs = ["Posts", "Drafts"];
+
   return (
     <div className="filter-tabs">
-      <button className="filter-btn">Posts</button>|
-      <button className="filter-btn">Drafts</button>
+      {tabs.map((tab, tabIndex) => {
+        return (
+          <>
+            <button
+              className="filter-btn"
+              key={tabIndex}
+              onClick={setSelectedTab(tab)}
+            >
+              {tab}
+            </button>
+          </>
+        );
+      })}
     </div>
   );
 }
