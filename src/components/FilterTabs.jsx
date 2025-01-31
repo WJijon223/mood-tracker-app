@@ -8,15 +8,13 @@ export function FilterTabs(props) {
     <div className="filter-tabs">
       {tabs.map((tab, tabIndex) => {
         return (
-          <>
-            <button
-              className="filter-btn"
-              key={tabIndex}
-              onClick={setSelectedTab(tab)}
-            >
-              {tab}
-            </button>
-          </>
+          <button
+            key={tabIndex}
+            className="filter-btn"
+            onClick={() => setSelectedTab(tab)}
+          >
+            {tab}
+          </button>
         );
       })}
     </div>

@@ -23,7 +23,7 @@ function App() {
     },
   ]);
 
-  const [selectedTab, setSelectedTab] = useState(`Posts`);
+  const [selectedTab, setSelectedTab] = useState("Posts");
 
   //Handling entries
   function handlePostEntry(index) {
@@ -66,7 +66,11 @@ function App() {
     <>
       <Header />
       <FilterTabs setSelectedTab={setSelectedTab} />
-      <PostsSection entries={entries} handlePostEntry={handlePostEntry} />
+      <PostsSection
+        selectedTab={selectedTab}
+        entries={entries}
+        handlePostEntry={handlePostEntry}
+      />
       <CreatePost
         handleCreateEntry={handleCreateEntry}
         handleArchiveEntry={handleArchiveEntry}

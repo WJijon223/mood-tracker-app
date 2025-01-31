@@ -3,11 +3,16 @@ import "../components/Post.jsx";
 import { Post } from "../components/Post.jsx";
 
 export function PostsSection(props) {
-  const { entries } = props;
+  const { entries, selectedTab } = props;
+
+  const filterEntries =
+    selectedTab == "Posts"
+      ? entries.filter((entry) => entry.posted)
+      : entries.filter((entry) => !entry.posted);
 
   return (
     <>
-      {entries.map((entry, entryIndex) => {
+      {filterEntries.map((entry, entryIndex) => {
         return <Post key={entryIndex} entry={entry} />;
       })}
     </>
