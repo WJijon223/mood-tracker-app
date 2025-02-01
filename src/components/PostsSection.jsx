@@ -13,7 +13,16 @@ export function PostsSection(props) {
   return (
     <>
       {filterEntries.map((entry, entryIndex) => {
-        return <Post key={entryIndex} entry={entry} />;
+        return (
+          <Post
+            key={entryIndex}
+            entry={entry}
+            entryIndex={entries.findIndex(
+              (val) => val.content == entry.content
+            )}
+            {...props}
+          />
+        );
       })}
     </>
   );

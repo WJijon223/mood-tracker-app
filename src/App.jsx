@@ -70,6 +70,8 @@ function App() {
         selectedTab={selectedTab}
         entries={entries}
         handlePostEntry={handlePostEntry}
+        handleDeleteEntry={handleDeleteEntry}
+        handleArchiveEntry={handleArchiveEntry}
       />
       <CreatePost
         handleCreateEntry={handleCreateEntry}
