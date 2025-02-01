@@ -1,13 +1,7 @@
 import "../styles/Post.css";
 
 export function Post(props) {
-  const {
-    entry,
-    entryIndex,
-    filterEntries,
-    handleDeleteEntry,
-    handleArchiveEntry,
-  } = props;
+  const { entry, entryIndex, handleDeleteEntry, handleArchiveEntry } = props;
   return (
     <div className="user-post">
       <h2>{entry.title}</h2>
@@ -26,6 +20,7 @@ export function Post(props) {
         <button
           className="post-btn"
           onClick={() => handleArchiveEntry(entryIndex)}
+          disabled={!entry.posted}
         >
           Archive
         </button>

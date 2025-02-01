@@ -36,7 +36,8 @@ function App() {
     user_title,
     user_content,
     user_date,
-    user_feeling
+    user_feeling,
+    user_posted
   ) {
     let newEntries = [
       ...entries,
@@ -45,7 +46,7 @@ function App() {
         content: user_content,
         date: user_date,
         feeling: user_feeling,
-        posted: false,
+        posted: user_posted,
       },
     ];
     setEntries(newEntries);
@@ -73,11 +74,7 @@ function App() {
         handleDeleteEntry={handleDeleteEntry}
         handleArchiveEntry={handleArchiveEntry}
       />
-      <CreatePost
-        handleCreateEntry={handleCreateEntry}
-        handleArchiveEntry={handleArchiveEntry}
-        entries={entries}
-      />
+      <CreatePost handleCreateEntry={handleCreateEntry} />
     </>
   );
 }

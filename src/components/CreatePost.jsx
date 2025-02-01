@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../styles/CreatePost.css";
 
 export function CreatePost(props) {
-  const { handleCreateEntry, handleArchiveEntry, entries } = props;
+  const { handleCreateEntry } = props;
 
   //must use a useState hook to capture the values that will be passed off as arguments
   //title_input, date_input, feeling_input, content_input to be passed off as arguments
@@ -83,15 +83,39 @@ export function CreatePost(props) {
                 title_input,
                 content_input,
                 date_input,
-                feeling_input
+                feeling_input,
+                true
               );
               clearInputs();
             }}
           >
             Post
           </button>
-          <button>Archive</button>
-          <button onClick={() => clearInputs()}>Delete</button>
+          <button
+            onClick={() => {
+              //check for empty values
+              if (
+                !title_input ||
+                !date_input ||
+                !feeling_input ||
+                !content_input
+              ) {
+                alert(`Please fill out the form`);
+                return;
+              }
+              handleCreateEntry(
+                title_input,
+                content_input,
+                date_input,
+                feeling_input,
+                false
+              );
+              clearInputs();
+            }}
+          >
+            Archive
+          </button>
+          <button onClick={() => clearInputs()}>Clear</button>
         </div>
       </div>
     </>
